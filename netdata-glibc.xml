@@ -53,6 +53,9 @@
     </Variable>
   </Environment>
   <Labels/>
-  <Config Type="Port" Name="Netdata Port" Target="19999" Default="19999" Mode="tcp" Description="Netdata Web UI Port." Display="always" Required="true">19999</Config>
+  <Config Type="Port" Name="Netdata Port" Target="19999" Default="19999" Mode="tcp" Description="Netdata Web UI Port" Display="always" Required="true">19999</Config>
+  <Config Name="proc" Target="/host/proc" Default="/proc" Mode="ro" Description="Container Path: /host/proc" Type="Path" Display="always" Required="false" Mask="false">/proc</Config>
+  <Config Name="sys" Target="/host/sys" Default="/host/sys" Mode="ro" Description="Container Path: /host/sys" Type="Path" Display="always" Required="false" Mask="false">/sys</Config>
+  <Config Name="doker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Container Path: /var/run/docker.sock" Type="Path" Display="always" Required="false" Mask="false">/var/run/docker.sock</Config>
   <Config Name="PGID" Target="PGID" Default="281" Mode="" Description="Host docker user gid. Required for container name resolution." Type="Variable" Display="always" Required="false" Mask="false">281</Config>
 </Container>
