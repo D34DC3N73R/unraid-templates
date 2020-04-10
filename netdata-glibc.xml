@@ -1,1 +1,59 @@
-
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <TemplateURL>https://raw.githubusercontent.com/D34DC3N73R/unraid-templates/master/netdata-glibc.xml</TemplateURL>
+  <Category>Tools</Category>
+  <Name>netdata-glibc</Name>
+  <Repository>d34dc3n73r/netdata-glibc</Repository>
+  <Registry>https://hub.docker.com/r/d34dc3n73r/netdata-glibc</Registry>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/D34DC3N73R/unraid-templates/issues</Support>
+  <Project>https://github.com/D34DC3N73R/netdata-glibc</Project>
+  <Overview>Netdata with Nvidia GPU monitoring in a container. This is an automated build of netdata with glibc package for use with nvidia GPUs.[br]
+  This image was created due to netdata/netdata using Alpine, a musl distribution, as a base. Nvidia drivers are only compatible with glibc distributions. This image uses netdata/netdata as a base and adds a GNU C library to run binaries linked against glibc. This image does not contain nvidia-smi, but is compatible with nvidia-docker2, nvidia-container-toolkit and the unraid nvidia plugin.</Overview>
+  <WebUI>http://[IP]:[PORT:19999]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/netdata/netdata/master/web/gui/images/android-icon-192x192.png</Icon>
+  <ExtraParams>--gpus all --cap-add SYS_PTRACE --security-opt apparmor=unconfined</ExtraParams>
+  <Description>Netdata with Nvidia GPU monitoring in a container. This is an automated build of netdata with glibc package for use with nvidia GPUs.[br]
+  This image was created due to netdata/netdata using Alpine, a musl distribution, as a base. Nvidia drivers are only compatible with glibc distributions. This image uses netdata/netdata as a base and adds a GNU C library to run binaries linked against glibc. This image does not contain nvidia-smi, but is compatible with nvidia-docker2, nvidia-container-toolkit and the unraid nvidia plugin.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>19999</HostPort>
+        <ContainerPort>19999</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/proc</HostDir>
+      <ContainerDir>/host/proc</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/sys</HostDir>
+      <ContainerDir>/host/sys</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/var/run/docker.sock</HostDir>
+      <ContainerDir>/var/run/docker.sock</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>281</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="proc" Target="/host/proc" Default="/proc" Mode="ro" Description="Container Path: /host/proc" Type="Path" Display="always" Required="false" Mask="false">/proc</Config>
+  <Config Name="sys" Target="/host/sys" Default="/host/sys" Mode="ro" Description="Container Path: /host/sys" Type="Path" Display="always" Required="false" Mask="false">/sys</Config>
+  <Config Name="doker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Container Path: /var/run/docker.sock" Type="Path" Display="always" Required="false" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="PGID" Target="PGID" Default="281" Mode="" Description="Host docker user gid. Required for container name resolution." Type="Variable" Display="always" Required="false" Mask="false">281</Config>
+</Container>
