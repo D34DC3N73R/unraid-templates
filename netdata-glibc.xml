@@ -6,18 +6,36 @@
   <Repository>d34dc3n73r/netdata-glibc</Repository>
   <Registry>https://hub.docker.com/r/d34dc3n73r/netdata-glibc</Registry>
   <Shell>sh</Shell>
+  <Beta>false</Beta>
   <Privileged>false</Privileged>
   <Support>https://github.com/D34DC3N73R/unraid-templates/issues</Support>
   <Project>https://github.com/D34DC3N73R/netdata-glibc</Project>
+  <BaseImage>netdata/netdata</BaseImage>
   <Overview>[b]Netdata with Nvidia GPU monitoring in a container.[/b][br]
-  This is an automated build of netdata with glibc package for use with nvidia GPUs.[br]
-  This image was created due to netdata/netdata using Alpine, a musl distribution, as a base. Nvidia drivers are only compatible with glibc distributions. This image uses netdata/netdata as a base and adds a GNU C library to run binaries linked against glibc. This image does not contain nvidia-smi, but is compatible with nvidia-docker2, nvidia-container-toolkit and the unraid nvidia plugin.</Overview>
+  This is an automated build of netdata with glibc package for use with Nvidia GPUs.[br]
+  [b][u][span style='color: #E80000;']NOTE:[/span][/u][/b][br]
+  An Nvidia GPU is required to use this image along with the UNRAID Nvidia Plugin. If you wish to use it without a gpu (eg need glibc for another reason) turn on 'Advanced View' and remove '--gpus all' from Extra Parameters.</Overview>
   <WebUI>http://[IP]:[PORT:19999]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/netdata/netdata/master/web/gui/images/android-icon-192x192.png</Icon>
   <ExtraParams>--gpus all --cap-add SYS_PTRACE --security-opt apparmor=unconfined</ExtraParams>
-  <Description>Netdata with Nvidia GPU monitoring in a container. This is an automated build of netdata with glibc package for use with nvidia GPUs.[br]
-  This image was created due to netdata/netdata using Alpine, a musl distribution, as a base. Nvidia drivers are only compatible with glibc distributions. This image uses netdata/netdata as a base and adds a GNU C library to run binaries linked against glibc. This image does not contain nvidia-smi, but is compatible with nvidia-docker2, nvidia-container-toolkit and the unraid nvidia plugin.</Description>
+  <Branch>
+    <Tag>latest</Tag>
+    <TagDescription>Automated build based on netdata/netdata:latest</TagDescription>
+  </Branch>
+  <Branch>
+    <Tag>v1.21.0</Tag>
+    <TagDescription>Built using netdata/netdata:v1.21.0</TagDescription>
+  </Branch>
+  <Branch>
+    <Tag>v1.20.0</Tag>
+    <TagDescription>Built using netdata/netdata:v1.20.0</TagDescription>
+  </Branch>
+  <Description>[b]Netdata with Nvidia GPU monitoring in a container.[/b][br]
+  This is an automated build of netdata with glibc package for use with nvidia GPUs.[br]
+  This image was created due to netdata/netdata using Alpine, a musl distribution, as a base. Nvidia drivers are only compatible with glibc distributions. This image uses netdata/netdata as a base and adds a GNU C library to run binaries linked against glibc. This image does not contain nvidia-smi, but is compatible with nvidia-docker2, nvidia-container-toolkit and the unraid nvidia plugin.[br]
+  [b][u][span style='color: #E80000;']NOTE:[/span][/u][/b][br]
+  An Nvidia GPU is required to use this image along with the UNRAID Nvidia Plugin. If you wish to use it without a gpu (ie need glibc for some other reason) turn on 'Advanced View' and remove '--gpus all' from Extra Parameters.</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
