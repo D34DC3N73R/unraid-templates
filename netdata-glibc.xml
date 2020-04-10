@@ -9,7 +9,8 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/D34DC3N73R/unraid-templates/issues</Support>
   <Project>https://github.com/D34DC3N73R/netdata-glibc</Project>
-  <Overview>Netdata with Nvidia GPU monitoring in a container. This is an automated build of netdata with glibc package for use with nvidia GPUs.[br]
+  <Overview>[b]Netdata with Nvidia GPU monitoring in a container.[/b][br]
+  This is an automated build of netdata with glibc package for use with nvidia GPUs.[br]
   This image was created due to netdata/netdata using Alpine, a musl distribution, as a base. Nvidia drivers are only compatible with glibc distributions. This image uses netdata/netdata as a base and adds a GNU C library to run binaries linked against glibc. This image does not contain nvidia-smi, but is compatible with nvidia-docker2, nvidia-container-toolkit and the unraid nvidia plugin.</Overview>
   <WebUI>http://[IP]:[PORT:19999]</WebUI>
   <TemplateURL/>
@@ -52,8 +53,6 @@
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="proc" Target="/host/proc" Default="/proc" Mode="ro" Description="Container Path: /host/proc" Type="Path" Display="always" Required="false" Mask="false">/proc</Config>
-  <Config Name="sys" Target="/host/sys" Default="/host/sys" Mode="ro" Description="Container Path: /host/sys" Type="Path" Display="always" Required="false" Mask="false">/sys</Config>
-  <Config Name="doker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Container Path: /var/run/docker.sock" Type="Path" Display="always" Required="false" Mask="false">/var/run/docker.sock</Config>
+  <Config Type="Port" Name="Netdata Port" Target="19999" Default="19999" Mode="tcp" Description="Netdata Web UI Port." Display="always" Required="true">19999</Config>
   <Config Name="PGID" Target="PGID" Default="281" Mode="" Description="Host docker user gid. Required for container name resolution." Type="Variable" Display="always" Required="false" Mask="false">281</Config>
 </Container>
