@@ -13,7 +13,7 @@
   <WebUI>http://[IP]:[PORT:19999]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/D34DC3N73R/unraid-templates/master/netdata-glibc.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/netdata/netdata/master/web/gui/images/android-icon-192x192.png</Icon>
-  <ExtraParams>--gpus all --cap-add SYS_PTRACE --security-opt apparmor=unconfined</ExtraParams>
+  <ExtraParams>--runtime=nvidia --cap-add SYS_PTRACE --security-opt apparmor=unconfined</ExtraParams>
   <Branch>
     <Tag>latest</Tag>
     <TagDescription>Automated build based on netdata/netdata:latest</TagDescription>
@@ -33,4 +33,5 @@
   <Config Name="Host /sys" Target="/host/sys" Default="/sys" Mode="ro" Description="Container Path: /host/sys" Type="Path" Display="advanced" Required="true" Mask="false">/sys</Config>
   <Config Name="doker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Container Path: /var/run/docker.sock" Type="Path" Display="advanced" Required="true" Mask="false">/var/run/docker.sock</Config>
   <Config Name="Docker PGID" Target="PGID" Default="281" Mode="" Description="Host docker user gid. Required for container name resolution." Type="Variable" Display="advanced" Required="true" Mask="false">281</Config>
+  <Config Name="Nvidia GPU" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Valid options: 0,1,2, GPU-fef8089b, all, none, void" Type="Variable" Display="advanced" Required="true" Mask="false">all</Config>
 </Container>
