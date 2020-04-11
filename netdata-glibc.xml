@@ -32,8 +32,8 @@
   This is an automated build of netdata with glibc package for use with Nvidia GPUs.[br]&#xD;
   [b][u][span style='color: #E80000;']NOTE:[/span][/u][/b] An Nvidia GPU is required to use this image along with the UNRAID Nvidia Plugin. If you wish to use it without a gpu (eg need glibc for another reason) turn on 'Advanced View' and remove '--gpus all' from Extra Parameters.</Description>
   <Config Name="Netdata Web UI Port" Target="19999" Default="19999" Mode="tcp" Description="Netdata Web UI Port" Type="Port" Display="always" Required="true" Mask="false">19999</Config>
+  <Config Name="Host /proc" Target="/host/proc" Default="/proc" Mode="ro" Description="Container Path: /host/proc" Type="Path" Display="advanced" Required="true" Mask="false">/proc</Config>
   <Config Name="Host /sys" Target="/host/sys" Default="/sys" Mode="ro" Description="Container Path: /host/sys" Type="Path" Display="advanced" Required="true" Mask="false">/sys</Config>
   <Config Name="doker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Container Path: /var/run/docker.sock" Type="Path" Display="advanced" Required="true" Mask="false">/var/run/docker.sock</Config>
   <Config Name="Docker PGID" Target="PGID" Default="281" Mode="" Description="Host docker user gid. Required for container name resolution." Type="Variable" Display="advanced" Required="true" Mask="false">281</Config>
-  <Config Name="Host /proc" Target="/host/proc" Default="/proc" Mode="ro" Description="Container Path: /host/proc" Type="Path" Display="advanced" Required="true" Mask="false">/proc</Config>
 </Container>
