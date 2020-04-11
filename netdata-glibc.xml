@@ -8,7 +8,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/D34DC3N73R/unraid-templates/issues</Support>
   <Project>https://github.com/D34DC3N73R/netdata-glibc</Project>
-  <Overview>[b]Netdata with Nvidia GPU monitoring in a container.[/b][br] This is an automated build of netdata with glibc package for use with Nvidia GPUs.[br] [b][u][span style='color: #E80000;']NOTE:[/span][/u][/b] An Nvidia GPU and the the UNRAID Nvidia Plugin are required to use this image. If you wish to use it without a gpu (eg need glibc for another reason) turn on Advanced View and remove '--gpus all' from Extra Parameters.</Overview>
+  <Overview>[b]Netdata with Nvidia GPU monitoring in a container.[/b][br]&#xD; This is an automated build of netdata with glibc package for use with Nvidia GPUs.[br]&#xD; [b][u][span style='color: #E80000;']NOTE:[/span][/u][/b] An Nvidia GPU and the the UNRAID Nvidia Plugin are required to use this image. If you wish to use it without a gpu (eg need glibc for another reason) turn on 'Advanced View' and remove '--gpus all' from Extra Parameters.</Overview>
   <Category>Tools: Status:Stable</Category>
   <WebUI>http://[IP]:[PORT:19999]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/D34DC3N73R/unraid-templates/master/netdata-glibc.xml</TemplateURL>
@@ -26,8 +26,9 @@
     <Tag>v1.20.0</Tag>
     <TagDescription>Built using netdata/netdata:v1.20.0</TagDescription>
   </Branch>
-  <Description>[b]Netdata with Nvidia GPU monitoring in a container.[/b][br] This is an automated build of netdata with glibc package for use with Nvidia GPUs.[br] [b][u][span style='color: #E80000;']NOTE:[/span][/u][/b] An Nvidia GPU and the the UNRAID Nvidia Plugin are required to use this image. If you wish to use it without a gpu (eg need glibc for another reason) turn on Advanced View and remove '--gpus all' from Extra Parameters.</Description>
+  <Description>[b]Netdata with Nvidia GPU monitoring in a container.[/b][br]&#xD; This is an automated build of netdata with glibc package for use with Nvidia GPUs.[br]&#xD; [b][u][span style='color: #E80000;']NOTE:[/span][/u][/b] An Nvidia GPU and the the UNRAID Nvidia Plugin are required to use this image. If you wish to use it without a gpu (eg need glibc for another reason) turn on 'Advanced View' and remove '--gpus all' from Extra Parameters.</Description>
   <Config Name="Netdata Web UI Port" Target="19999" Default="19999" Mode="tcp" Description="Netdata Web UI Port" Type="Port" Display="always" Required="true" Mask="false">19999</Config>
+  <Config Name="Anonymous Statistics" Target="DO_NOT_TRACK" Default="0" Mode="" Description="Set to 1 to disable anonymous statistics." Type="Variable" Display="always" Required="false" Mask="false">0</Config>
   <Config Name="Host /proc" Target="/host/proc" Default="/proc" Mode="ro" Description="Container Path: /host/proc" Type="Path" Display="advanced" Required="true" Mask="false">/proc</Config>
   <Config Name="Host /sys" Target="/host/sys" Default="/sys" Mode="ro" Description="Container Path: /host/sys" Type="Path" Display="advanced" Required="true" Mask="false">/sys</Config>
   <Config Name="doker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Container Path: /var/run/docker.sock" Type="Path" Display="advanced" Required="true" Mask="false">/var/run/docker.sock</Config>
