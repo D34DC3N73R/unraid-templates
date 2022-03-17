@@ -19,16 +19,16 @@
     <TagDescription>Automated build based on netdata/netdata:latest</TagDescription>
   </Branch>
   <Branch>
-    <Tag>v1.33.0</Tag>
-    <TagDescription>Built using netdata/netdata:v1.33.0</TagDescription>
+    <Tag>stable</Tag>
+    <TagDescription>Built using netdata/netdata:stable</TagDescription>
+  </Branch>
+  <Branch>
+    <Tag>v1.33.1</Tag>
+    <TagDescription>Built using netdata/netdata:v1.33.1</TagDescription>
   </Branch>
   <Branch>
     <Tag>v1.32.1</Tag>
     <TagDescription>Built using netdata/netdata:v1.32.1</TagDescription>
-  </Branch>
-  <Branch>
-    <Tag>v1.31.0</Tag>
-    <TagDescription>Built using netdata/netdata:v1.31.0</TagDescription>
   </Branch>
   <Description>[b]Netdata with Nvidia GPU monitoring in a container.[/b] An automated build of netdata with glibc for use with Nvidia GPUs.[br] [b][u][span style='color: #E80000;']NOTE:[/span][/u][/b] An Nvidia GPU and the Unraid Nvidia Plugin are required to use this image. If you wish to use it without a gpu, (eg need glibc for another reason) turn on Advanced View and remove '--runtime=nvidia' from Extra Parameters, and remove NVIDIA_VISIBLE_DEVICES or set it to 'void'.</Description>
   <Config Name="Netdata Web UI Port" Target="19999" Default="19999" Mode="tcp" Description="Netdata Web UI Port" Type="Port" Display="always" Required="true" Mask="false">19999</Config>
