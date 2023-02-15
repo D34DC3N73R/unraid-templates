@@ -23,6 +23,7 @@
     <TagDescription>Automated build based on netdata/netdata:latest</TagDescription>
   </Branch>
   <Description>[b]Netdata with Nvidia GPU monitoring in a container.[/b] An automated build of netdata with glibc for use with Nvidia GPUs.[br] [b][u][span style='color: #E80000;']NOTE:[/span][/u][/b] An Nvidia GPU and the Unraid Nvidia Plugin are required to use this image. If you wish to use it without a gpu, (eg need glibc for another reason) turn on Advanced View and remove '--runtime=nvidia' from Extra Parameters, and remove NVIDIA_VISIBLE_DEVICES or set it to 'void'.</Description>
+  <Requires>nVidia Unraid plugin and an nVidia GPU</Requires>
   <Config Name="Netdata Web UI Port" Target="19999" Default="19999" Mode="tcp" Description="Netdata Web UI Port" Type="Port" Display="always" Required="true" Mask="false">19999</Config>
   <Config Name="Anonymous Statistics" Target="DO_NOT_TRACK" Default="" Mode="" Description="Set to 1 to disable anonymous statistics." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Netdata Config" Target="/etc/netdata" Default="/mnt/user/appdata/netdata/config" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/netdata/config</Config>
