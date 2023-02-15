@@ -39,4 +39,5 @@
   <Config Name="Host group" Target="/host/etc/group" Default="/etc/group" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/etc/group</Config>
   <Config Name="Host passwd" Target="/host/etc/passwd" Default="/etc/passwd" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/etc/passwd</Config>
   <Config Name="Host OS" Target="/host/etc/os-release" Default="/etc/os-release" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/etc/os-release</Config>
+  <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Valid options: 0,1,2, GPU-fef8089b, all, none, void" Type="Variable" Display="advanced" Required="false" Mask="false">all</Config>
 </Container>
