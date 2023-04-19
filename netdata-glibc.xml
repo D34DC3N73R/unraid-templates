@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>netdata-glibc</Name>
-  <Repository>d34dc3n73r/netdata-glibc</Repository>
-  <Registry>https://hub.docker.com/r/d34dc3n73r/netdata-glibc</Registry>
+  <Name>netdata-gpu</Name>
+  <Repository>netdata/netdata</Repository>
+  <Registry>https://hub.docker.com/r/netdata/netdata</Registry>
   <Network>bridge</Network>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/90880-support-d34dc3n73r-netdata-glibc-gpu-enabled/</Support>
-  <Project>https://github.com/D34DC3N73R/netdata-glibc</Project>
-  <Overview>[b]Netdata with Nvidia GPU monitoring in a container.[/b] An automated build of netdata with glibc for use with Nvidia GPUs.[br] [b][u][span style='color: #E80000;']NOTE:[/span][/u][/b] An Nvidia GPU and the Unraid Nvidia Plugin are required to use this image. If you wish to use it without a gpu, (eg need glibc for another reason) turn on Advanced View and remove '--runtime=nvidia' from Extra Parameters, and remove NVIDIA_VISIBLE_DEVICES or set it to 'void'.</Overview>
+  <Project>https://github.com/D34DC3N73R/unraid-templates</Project>
+  <Overview>[b]Netdata with Nvidia GPU monitoring in a container.[/b] The automated build has been deprecated now that the official netdata image can be used.[br] [b][u][span style='color: #E80000;']IMPORTANT:[/span][/u][/b] python.d.conf must be edited before GPU charts will be displayed. See https://learn.netdata.cloud/docs/data-collection/monitor-anything/hardware/nvidia_smi-python.d.plugin/</Overview>
   <Category>Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:19999]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/D34DC3N73R/unraid-templates/master/netdata-glibc.xml</TemplateURL>
@@ -16,13 +16,17 @@
   <ExtraParams>--hostname=unraid --runtime=nvidia --cap-add SYS_PTRACE --security-opt apparmor=unconfined</ExtraParams>
   <Branch>
     <Tag>stable</Tag>
-    <TagDescription>Built using netdata/netdata:stable</TagDescription>
+    <TagDescription>The stable tag will always point to the most recently published stable build.</TagDescription>
+  </Branch>
+  <Branch>
+    <Tag>edge</Tag>
+    <TagDescription>The edge tag will always point ot the most recently published nightly build. In most cases, this is updated daily at around 01:00 UTC.</TagDescription>
   </Branch>
   <Branch>
     <Tag>latest</Tag>
-    <TagDescription>Automated build based on netdata/netdata:latest</TagDescription>
+    <TagDescription>The latest tag will always point to the most recently published build, whether it’s a stable build or a nightly build.</TagDescription>
   </Branch>
-  <Description>[b]Netdata with Nvidia GPU monitoring in a container.[/b] An automated build of netdata with glibc for use with Nvidia GPUs.[br] [b][u][span style='color: #E80000;']NOTE:[/span][/u][/b] An Nvidia GPU and the Unraid Nvidia Plugin are required to use this image. If you wish to use it without a gpu, (eg need glibc for another reason) turn on Advanced View and remove '--runtime=nvidia' from Extra Parameters, and remove NVIDIA_VISIBLE_DEVICES or set it to 'void'.</Description>
+  <Description>[b]Netdata with Nvidia GPU monitoring in a container.[/b] The automated build has been deprecated now that the official netdata image can be used.[br] [b][u][span style='color: #E80000;']IMPORTANT:[/span][/u][/b] python.d.conf must be edited before GPU charts will be displayed. See https://learn.netdata.cloud/docs/data-collection/monitor-anything/hardware/nvidia_smi-python.d.plugin/</Description>
   <Requires>nVidia Unraid plugin and an nVidia GPU</Requires>
   <Config Name="Netdata Web UI Port" Target="19999" Default="19999" Mode="tcp" Description="Netdata Web UI Port" Type="Port" Display="always" Required="true" Mask="false">19999</Config>
   <Config Name="Anonymous Statistics" Target="DO_NOT_TRACK" Default="" Mode="" Description="Set to 1 to disable anonymous statistics." Type="Variable" Display="always" Required="false" Mask="false"/>
@@ -40,4 +44,5 @@
   <Config Name="Host passwd" Target="/host/etc/passwd" Default="/etc/passwd" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/etc/passwd</Config>
   <Config Name="Host OS" Target="/host/etc/os-release" Default="/etc/os-release" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/etc/os-release</Config>
   <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Valid options: 0,1,2, GPU-fef8089b, all, none, void" Type="Variable" Display="advanced" Required="false" Mask="false">all</Config>
+  <Config Name="NETDATA_EXTRA_APK_PACKAGES" Target="NETDATA_EXTRA_APK_PACKAGES" Default="gcompat" Mode="" Description="Install gcompat to enable glibc linked binaries" Type="Variable" Display="advanced" Required="false" Mask="false">gcompat</Config>
 </Container>
