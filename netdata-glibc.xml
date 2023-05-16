@@ -4,7 +4,7 @@
   <Repository>netdata/netdata</Repository>
   <Registry>https://hub.docker.com/r/netdata/netdata</Registry>
   <Network>host</Network>
-  <Shell>sh</Shell>
+  <Shell>bash</Shell>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/90880-support-d34dc3n73r-netdata-glibc-gpu-enabled/</Support>
   <Project>https://github.com/D34DC3N73R/unraid-templates</Project>
