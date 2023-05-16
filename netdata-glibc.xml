@@ -31,8 +31,8 @@
   <Config Name="Netdata Web UI Port" Target="19999" Default="19999" Mode="tcp" Description="Netdata Web UI Port" Type="Port" Display="always" Required="true" Mask="false">19999</Config>
   <Config Name="Anonymous Statistics" Target="DO_NOT_TRACK" Default="" Mode="" Description="Set to 1 to disable anonymous statistics." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Netdata Config" Target="/etc/netdata" Default="/mnt/user/appdata/netdata/config" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/netdata/config</Config>
-  <Config Name="Netdata Cloud" Target="/var/lib/netdata/cloud.d" Default="/mnt/user/appdata/netdata/cloud" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/netdata/cloud</Config>
-  <Config Name="Netdata Cache" Target="/var/lib/cache/netdata" Default="/mnt/user/appdata/netdata/cache" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/netdata/cache</Config>
+  <Config Name="Netdata Lib" Target="/var/lib/netdata" Default="netdatalib" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">netdatalib</Config>
+  <Config Name="Netdata Cache" Target="/var/cache/netdata" Default="netdatacache" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">netdatacache</Config>
   <Config Name="NETDATA_CLAIM_TOKEN" Target="NETDATA_CLAIM_TOKEN" Default="" Mode="" Description="See https://learn.netdata.cloud/docs/agent/claim#connect-an-agent-running-in-docker" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="NETDATA_CLAIM_URL" Target="NETDATA_CLAIM_URL" Default="https://app.netdata.cloud" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">https://app.netdata.cloud</Config>
   <Config Name="NETDATA_CLAIM_ROOMS" Target="NETDATA_CLAIM_ROOMS" Default="" Mode="" Description="See https://learn.netdata.cloud/docs/agent/claim#connect-an-agent-running-in-docker" Type="Variable" Display="always" Required="false" Mask="false"></Config>
