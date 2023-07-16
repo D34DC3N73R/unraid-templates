@@ -12,7 +12,7 @@
   <Category>Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:19999]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/D34DC3N73R/unraid-templates/master/netdata-glibc.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/netdata/netdata/master/web/gui/dashboard/images/ms-icon-310x310.png</Icon>
+  <Icon>https://raw.githubusercontent.com/netdata/netdata/v1.40/web/gui/dashboard/images/ms-icon-310x310.png</Icon>
   <ExtraParams>--hostname=unraid --runtime=nvidia --cap-add SYS_PTRACE --security-opt apparmor=unconfined</ExtraParams>
   <Branch>
     <Tag>stable</Tag>
